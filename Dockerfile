@@ -28,5 +28,14 @@ COPY --from=builder /app/discord2http /app/discord2http
 COPY scripts/start.sh /app/start.sh
 RUN chmod +x /app/start.sh
 
+# Add OCI labels
+LABEL org.opencontainers.image.title="Discord2HTTP"
+LABEL org.opencontainers.image.description="This project is for turning a Discord channel, events or both into simple HTTP strings that can be parsed and formatted in games."
+LABEL org.opencontainers.image.authors="Sveken"
+LABEL org.opencontainers.image.url="https://github.com/sveken/Discord2HTTP"
+LABEL org.opencontainers.image.source="https://github.com/sveken/Discord2HTTP"
+LABEL org.opencontainers.image.licenses="MIT"
+LABEL org.opencontainers.image.base.name="alpine:latest"
+
 # Run the application
 CMD ["/app/start.sh"]
