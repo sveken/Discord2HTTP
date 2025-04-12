@@ -1,0 +1,17 @@
+services:
+  discord2http:
+    image: ghcr.io/sveken/discord2http:latest
+    container_name: discord2http
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      - DISCORD_TOKEN=your_discord_bot_token_here
+      - DISCORD_CHANNEL=your_discord_channel_id_here
+      - DISCORD_GUILD=your_discord_guild_id_here
+      - MAX_MESSAGES=5
+      - MAX_EVENTS=10
+      - ENABLE_EVENTS=false
+      - ENABLE_CHANNEL=true
+      - EVENT_REFRESH=3600
+
