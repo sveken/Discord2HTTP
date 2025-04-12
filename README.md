@@ -1,21 +1,21 @@
 # Discord2HTTP
-This project is for turning a discord channel, events or both into simple http strings that can be parsed and formated in games to make for example, an event panel that auto updates and stays in sync with the discord server. 
+This project is for turning a Discord channel, events or both into simple HTTP strings that can be parsed and formatted in games to make, for example, an event panel that auto-updates and stays in sync with the Discord server. 
 
-This was designed around Resonite for use as a way to automaticly sync in world panels to a discord server.
+This was designed around Resonite for use as a way to automatically sync in-world panels to a Discord server.
 
 ## In Resonite
 Place info on prebuilt panels here with pictures. After working with the wolfinator (Big Red Wolfy)
 
 
 #### The Web Endpoints
-A list of the web endpoints that are usable [availalbe here.](docs\endpoints.md)
+A list of the web endpoints that are usable [available here.](docs/endpoints.md)
 #### List of Flags
-A list of all the flags that can be used against the binary [available here](docs\flags.md)
+A list of all the flags that can be used against the binary [available here](docs/flags.md)
 ## Setup
-You will be required to make a discord bot that has `Message content intent` enabled in the bot settings on the discord developers portal. 
-Copy the bot token from your created application from the discord developors portal.
-If you only need events, you can use the server/guild ID found by enabling developer mode in discord, then right clicking the server icon and coping the ID. 
-Otherwise if no Guild/Server ID is set it will fallback to the channel ID to identify the server for events. 
+You will be required to make a Discord bot that has `Message content intent` enabled in the bot settings on the Discord developers portal. 
+Copy the bot token from your created application from the Discord developers portal.
+If you only need events, you can use the server/guild ID found by enabling developer mode in Discord, then right clicking the server icon and copying the ID. 
+Otherwise if no Guild/Server ID is set it will fallback to the channel ID to identify the server for events.
 
 If you are only watching a channel you only need the channel ID. 
 
