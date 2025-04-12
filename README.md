@@ -88,3 +88,5 @@ services:
       - ENABLE_CHANNEL=true
       - EVENT_REFRESH=3600
 ```
+## Credits
+This uses the DiscordGo Package from https://github.com/bwmarrin/discordgo
