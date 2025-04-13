@@ -8,9 +8,9 @@ Place info on prebuilt panels here with pictures. After working with the wolfina
 
 
 #### The Web Endpoints
-A list of the web endpoints that are usable [available here.](docs/endpoints.md)
+A list of the web endpoints that are usable and parsable in games. [available here.](docs/endpoints.md)
 #### List of Flags
-A list of all the flags that can be used against the binary [available here](docs/flags.md)
+A list of all the flags that can be used against the binary. [available here](docs/flags.md)
 ## Setup
 You will be required to make a Discord bot that has `Message content intent` enabled in the bot settings on the Discord developers portal. 
 Copy the bot token from your created application from the Discord developers portal.
@@ -43,13 +43,13 @@ services:
 ```
 
 ### Release Binaries.
-Download the latest release for the platform you want. For windows hosts there is an example start script under /scripts/run_discord2http.bat that can be edited with the required values and used for easy startup.
+[Download the latest release](https://github.com/sveken/Discord2HTTP/releases) for the platform you want. For windows and linux hosts there is an example start scripts under /scripts directory in this repo that can be edited with the required values and used for easy startup if you don't want to use docker.
 
 
-# Note. This program will make the channel you configure or the events if enabled public/accessible to anyone with access to this server/program.
-This is required for your game for example a Resonite headless server to access this information. 
+## Note. This program will make the channel you configure or the events if enabled public/accessible to anyone with access to this server/program.
+This is required for use in game, for example a Resonite headless server to access this information. 
 
-One example to get around this is if you have your headless server in docker, you can add this programs docker image to the same stack, meaning it will only be available for the headless server directly. 
+If this is a problem one example to get around this is if you have your headless server in docker, you can add this programs docker image to the same stack, meaning it will only be available for the headless server directly. 
 
 Example Compose file for this. In resonite the url the headless would use would be discord2http:8080
 

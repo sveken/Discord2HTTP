@@ -4,6 +4,8 @@ All endpoints should be appended to your host URL.
 
 For example, if hosted locally: `http://localhost:8080/numberofmessages`
 
+The messages/events are always sorted by most recent, ie 0 will be the newest message.
+
 ## Message Endpoints
 
 | Endpoint | Description |
