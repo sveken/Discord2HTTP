@@ -24,15 +24,12 @@ RUN addgroup -S appgroup && adduser -S discord2http -G appgroup
 
 WORKDIR /app
 
-# Copy the built executable from the builder stage
-COPY --from=builder /app/discord2http /app/discord2http
 
-# Copy start script from scripts folder
-COPY scripts/start.sh /app/start.sh
+COPY --from=builder --chown=discord2http:appgroup /app/discord2http /app/discord2http
+
+
+COPY --chown=discord2http:appgroup scripts/start.sh /app/start.sh
 RUN chmod +x /app/start.sh
-
-# Change ownership of the application files
-RUN chown -R discord2http:appgroup /app
 
 # Switch to non-root user
 USER discord2http
