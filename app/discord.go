@@ -264,6 +264,6 @@ func handleEventRequest(w http.ResponseWriter, r *http.Request) {
 		}
 		fmt.Fprint(w, events[index].ImageURL)
 	default:
-		http.Error(w, "Invalid field requested. Use eventname, time, Location, description, or bannerurl", http.StatusBadRequest)
+		http.Error(w, "Invalid field requested. Use eventname, time, location, description, or bannerurl", http.StatusBadRequest)
 	}
 }
