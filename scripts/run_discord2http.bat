@@ -24,7 +24,7 @@ set EVENT_REFRESH=3600
 
 REM Run the application with parameters
 echo Starting Discord2HTTP...
-..\discord2http.exe ^
+.\Discord2HTTP-windows-amd64.exe ^
   --token=%TOKEN% ^
   --channel=%CHANNEL% ^
   --max-messages=%MAX_MESSAGES% ^

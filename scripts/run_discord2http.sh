@@ -24,7 +24,7 @@ EVENT_REFRESH=3600
 
 # Run the application with parameters
 echo "Starting Discord2HTTP..."
-../Discord2HTTP-linux-amd64 \
+./Discord2HTTP-linux-amd64 \
   --token="${TOKEN}" \
   --channel="${CHANNEL}" \
   --max-messages="${MAX_MESSAGES}" \
