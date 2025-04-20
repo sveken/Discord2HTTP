@@ -21,6 +21,9 @@ If you are only watching a channel you only need the channel ID.
 
 ## Hosting
 
+### Release Binaries.
+[Download the latest release](https://github.com/sveken/Discord2HTTP/releases) for the platform you want. For windows and linux hosts there is an example start scripts under /scripts directory in this repo that can be edited with the required values and used for easy startup if you don't want to use docker.
+
 ### Docker Compose
 
 ```
@@ -41,9 +44,6 @@ services:
       - ENABLE_CHANNEL=true
       - EVENT_REFRESH=3600
 ```
-
-### Release Binaries.
-[Download the latest release](https://github.com/sveken/Discord2HTTP/releases) for the platform you want. For windows and linux hosts there is an example start scripts under /scripts directory in this repo that can be edited with the required values and used for easy startup if you don't want to use docker.
 
 
 ## Note. This program will make the channel you configure or the events if enabled public/accessible to anyone with access to this server/program.
