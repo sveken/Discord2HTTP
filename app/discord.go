@@ -252,7 +252,7 @@ func handleEventRequest(w http.ResponseWriter, r *http.Request) {
 	case "time":
 		// Return time in ISO 8601 format in UTC
 		fmt.Fprint(w, events[index].StartTime.Format(time.RFC3339))
-	case "Location":
+	case "location":
 		fmt.Fprint(w, events[index].Location)
 	case "description":
 		fmt.Fprint(w, events[index].Description)
