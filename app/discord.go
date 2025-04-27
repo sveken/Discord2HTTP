@@ -4,12 +4,39 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"regexp" // Added regexp package
 	"strconv"
 	"strings"
 	"time"
 
 	"github.com/bwmarrin/discordgo"
 )
+
+// Regular expression to find user mentions like <@1234567890>
+var userMentionRegex = regexp.MustCompile(`<@(\d+)>`)
+
+// resolveMentions finds user mentions (<@USER_ID>) in content and replaces them with @username
+func resolveMentions(content string) string {
+	return userMentionRegex.ReplaceAllStringFunc(content, func(mention string) string {
+		// Extract user ID from the mention string (e.g., "<@1234567890>" -> "1234567890")
+		matches := userMentionRegex.FindStringSubmatch(mention)
+		if len(matches) < 2 {
+			return mention // Should not happen with the defined regex, but safety first
+		}
+		userID := matches[1]
+
+		// Fetch user information from Discord
+		user, err := discord.User(userID)
+		if err != nil {
+			// Log the error and return the original mention if user fetch fails
+			log.Printf("Error fetching user %s: %v", userID, err)
+			return mention
+		}
+
+		// Return the formatted username mention
+		return fmt.Sprintf("@%s", user.Username)
+	})
+}
 
 // fetchInitialMessages retrieves the most recent messages from the Discord channel
 func fetchInitialMessages() {
@@ -115,7 +142,9 @@ func handleMessageRequest(w http.ResponseWriter, r *http.Request) {
 		if messages[index].Content == "" {
 			fmt.Fprint(w, "[Empty message content]")
 		} else {
-			fmt.Fprint(w, messages[index].Content)
+			// Resolve mentions before sending the content
+			resolvedContent := resolveMentions(messages[index].Content)
+			fmt.Fprint(w, resolvedContent)
 		}
 	}
 }
